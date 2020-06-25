@@ -47,6 +47,24 @@ CAM algorithm used here works on similar lines of what has been shown above.
 ```
 * We have the heatmap now :smile:
 
+## Finally Some Example Images :nerd_face:
+
+<p float="left">
+  <img src="/xrays/xray3.jpg" width="200" height="200" />
+  <img src="/heatmaps/heatmap3.jpg" width="200" /> 
+</p>
+
+<p float="left">
+  <img src="/xrays/xray2.jpg" width="200" height="200" />
+  <img src="/heatmaps/heatmap2.jpg" width="200" /> 
+</p>
+
+<p float="left">
+  <img src="/xrays/xray4.jpg" width="200" height="200" />
+  <img src="/heatmaps/heatmap4.jpg" width="200" /> 
+</p>
+
+
 ## References
 
 * This repo [here](https://github.com/zoogzog/chexnet) helped me a lot. 
