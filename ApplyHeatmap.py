@@ -5,6 +5,7 @@ import sys
 import numpy as np
 from PIL import Image
 import cv2
+import argparse
 
 import torch
 import torch.nn as nn
@@ -14,6 +15,16 @@ import torchvision.transforms as transforms
 
 from DenseNet import DenseNet121
 
+
+# construct the argument parser and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required=True,
+	help="path to the input image")
+ap.add_argument("-o", "--output", required=True,
+	help="path to the output image")
+args = vars(ap.parse_args())
+
+
 # Class Activation Map code for plotting activation Heatmaps of different 
 # anomaly regions in the supplied X-Ray
 
@@ -21,7 +32,7 @@ class HeatmapGenerator ():
     
     def __init__ (self, pathModel, nnClassCount, imageSize):
        
-        #---- Initialize the network
+        #Initialize the network
         model = DenseNet121(nnClassCount, True).cuda()
           
         model = torch.nn.DataParallel(model).cuda()
@@ -98,8 +109,8 @@ class HeatmapGenerator ():
         cv2.imwrite(pathOutputFile, img)
 
 
-pathInputImage = 'xray3.jpg'
-pathOutputImage = 'heatmap3.jpg'
+pathInputImage = args["image"]
+pathOutputImage = args["output"]
 pathModel = 'C:/Users/Richeek Das/Documents/GitHub/Grad-CAM-Localization/model/densenet.pth.tar'
 
 nnClassCount = 14
