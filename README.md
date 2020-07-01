@@ -24,7 +24,9 @@ where ```imageSize = 224```.
 
 ## Model
 
-This **Class Activation Map** is generated using a single DenseNet121 model.
+This **Class Activation Map** is generated using a single DenseNet-121 based model. The model pipeline is as shown below:
+
+![DenseNet-121 Pipeline](https://github.com/PerXeptron/CAM-Localization/blob/master/model/DenseNet-121%20Pipeline.jpg)
 
 ## Algorithm and Explanation
 
